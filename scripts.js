@@ -18,9 +18,10 @@ window.addEventListener("load",function ready () {
     image.style.bottom = "0px";
     image.style.left= "0px";
     let offset=0;
-    let offset2=0;
+    let timer;
     let altitude = 0;
     let shuttleHeight=this.document.getElementById("spaceShuttleHeight");
+
     liftoff.addEventListener("click", function(){
         let result = confirm ("Confirm that the shuttle is ready for takeoff.");        
         if (result){
@@ -30,9 +31,9 @@ window.addEventListener("load",function ready () {
            shuttleHeight.innerHTML='10000';
         }
         if (inAir){
-            document.getElementById("right").addEventListener("mousedown", function(){      
-                offset = parseInt(image.style.left) + 10 +'px';
-                offset2 += 10;
+            document.getElementById("right").addEventListener("mousedown", function(){
+     
+                
                 console.log (offset2)
                 if (parseInt(image.style.left)< 340){
                     image.style.left = offset;
